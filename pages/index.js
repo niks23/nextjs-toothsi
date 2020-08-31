@@ -4,10 +4,10 @@ import styles from '../styles/Home.module.css'
 const YOUTUBE_PLAYLIST_ITEMS_API = 'https://www.googleapis.com/youtube/v3/playlistItems';
 
 export async function getServerSideProps() {
-  const res = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PLTjRvDozrdlxEIuOBZkMAK5uiqp8rHUax&maxResults=50&key=${process.env.YOUTUBE_API_KEY}`);
+  const res = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=PLTjRvDozrdlxEIuOBZkMAK5uiqp8rHUax&maxResults=50&key=AIzaSyDTEZp_FXveKfG45Bg7V-Tumr2R1_PpazM`);
+  // ${process.env.YOUTUBE_API_KEY}
   const data = await res.json();
   // part=snippet&playlistId=PLTjRvDozrdlxEIuOBZkMAK5uiqp8rHUax
-
   return {
     props: {
       data
@@ -25,7 +25,7 @@ export default function Home({ data }) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Youtube Playlist
+          Youtube Playlist API
         </h1>
 
         <ul className={styles.grid}>
